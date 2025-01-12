@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         int somme = 0;
         int length = 100_000;
-        int tableSplit = 15;
+        int tableSplit = 5;
         int[] array = new int[length];
         ExecutorService executorService = Executors.newFixedThreadPool(tableSplit);
         for (int i = 0; i < length; i++) {
