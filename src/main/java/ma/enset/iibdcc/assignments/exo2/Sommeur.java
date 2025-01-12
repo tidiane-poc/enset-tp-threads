@@ -1,5 +1,7 @@
 package ma.enset.iibdcc.assignments.exo2;
 
+import java.util.Arrays;
+
 public class Sommeur implements Runnable {
     private int somme;
     private int startIndex;
@@ -19,9 +21,19 @@ public class Sommeur implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Thread " + Thread.currentThread().getName() + " : " + startIndex + " - " + endIndex);
+//        System.out.println("Thread " + Thread.currentThread().getName() + " : " + startIndex + " - " + endIndex);
         for (int i = startIndex; i < endIndex; i++) {
             somme += array[i];
         }
+    }
+
+    @Override
+    public String toString() {
+        return Thread.currentThread().getName()+ ": {" +
+                "somme=" + somme +
+                ", startIndex=" + startIndex +
+                ", endIndex=" + endIndex +
+                ", array=" + Arrays.toString(array) +
+                '}';
     }
 }
